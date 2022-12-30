@@ -51,4 +51,4 @@ Some specifics about the code above
     The automation trigger is based on the changing state (on / off) of this entity.
     The notification message will be sent to your smartphone via the alarm_stream to be sure the vibrate/silent ringer mode won’t avoid your device to ring.
 
- 
+ more info: https://www.forgani.com/electronics-projects/heating-temperature-monitoring/
