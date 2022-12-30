@@ -11,7 +11,6 @@ esphome:
 esp8266:
   board: esp8285
 
-
 # Enable logging
 logger:
   level: debug
@@ -41,7 +40,6 @@ wifi:
 dallas:
   - pin: GPIO3    # RX D9
     update_interval: 15s
-
 
 sensor:
   - platform: dallas
@@ -74,7 +72,6 @@ sensor:
     pin: VCC
     id: "battery_level"
     name: "$devicename battery level"
-
 
 binary_sensor:
   - platform: gpio
@@ -121,7 +118,6 @@ binary_sensor:
       - switch.toggle: buzzer_enabled
       
 light:
-  #- platform: status_led
   - platform: monochromatic
     #pin: GPIO13
     id: status_led_blink
@@ -171,7 +167,6 @@ output:
     pin:
       number: GPIO13
 
-# Exposed switches.
 switch:
   - platform: template
     name: "$devicename virtual off switch"
@@ -181,14 +176,5 @@ switch:
     inverted: false
     optimistic: true
     restore_state: true
-  #- platform: template
-  #  name: "Alarm LED EIN"
-  #  id: led_enabled
-  #  icon: mdi:alarm-light-outline
-  #  inverted: true
-  #  optimistic: true
-  #  restore_state: true
-  #  turn_off_action:
-  #    - switch.turn_off: status_led
    
     
