@@ -1,13 +1,13 @@
 # Temperatures-of-a-heating-system
 Measurement of flow/return temperatures of a heating system with SONOFF devices and Home Assistant.
 
-The device will not boot into its regular operating mode if GPIO02 is pulled low at boot.
+I used Sonoff because they are all in one with power supply and box. But before we use them, we should know some important details about them.
+The device will not boot into its regular operating mode if GPIO02 is pulled low at boot and so the GPIO02 is useless.
 I’m using GPIO03 (Rx) for DS18B20 temperature sensors, which does not have any boot function restrictions.
 
-The GPIO14 is definitely not connected (Sonoff Basic R2 V1.0) so I solder a wire to the chip to access the GPIO14
-Connect Sonoff device for Esphome install
+The GPIO14 is definitely not connected (Sonoff Basic R2 V1.0) so I soldered a wire to the chip to access the GPIO14
 
-Complete ESPHome Installation Guide: 4 different ways to install ESPHome
+Complete ESPHome Installation Guide. There are many such guides on the internet and you can easily find one by searching it.
 
 Connect USB FTDI programmer to the computer, hold down the basic broad button to connect GPIO0 to GND while the device is booting to put it in Programming and Flash mode.
 Note: We supply USB power to Sonoff via FTDI and make sure you set 3.3V setting on FTDI, 5V will cause damage.
@@ -25,8 +25,12 @@ Using With Sonoff Basic — ESPHome
     In the next dialog, click on Pick specific Board radio button and select the Generic ESP8266 (for example Sonoff) click Next button.
     lick Install button and you will have ESPHome installed on your ESP device
 
-If everything is fine, a terminal will appear with a lot of text and multiple text based progress bars.
-When the ESP installation is finished, your new ESPHome device will be automatically added in the ESPHome Dashboard.
+When the ESP installation is finished, the Sonoff device will be automatically added in the ESPHome Dashboard.
+
+Remove the Sonoff BASIC cover and desolder the relay and add buzzer with a 220 ohm series resistor instead.
+
+The DS18B20 are "onewire" bus sensors. So we connecting all of the DS18B20s in parallel, sharing all of the VDD, GND and signal pin.
+Next we connect signal pins to digital pin GPIO03 (RX) on the Sonoff.
 
 Temperature Sensors are wired according to the following scheme.
 The 4.7 kOhm resistor be soldered between the signal pin and VCC.
