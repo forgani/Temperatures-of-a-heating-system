@@ -20,7 +20,6 @@ The 4.7 kOhm resistor be soldered between the signal pin and VCC.<br>
 
 
 In order to get the address, simply start the firmware on your device with a configured dallas hub and observe the log output (the log level must be set to at least debug!).<br>
-Note that you don’t need to define the individual dallas sensors just yet, as the scanning will happen even with no sensors connected.<br>
 
  
  ![grafik](https://user-images.githubusercontent.com/25223934/210084998-d4a4117d-c1bf-4770-a3e5-a77a26f51bdf.png)
